@@ -1,1 +1,1 @@
-alert('certified cool');
+alert('certified coolest!');
