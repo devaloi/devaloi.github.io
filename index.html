@@ -1,749 +1,202 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jason Aloi - Senior AI Engineer & Machine Learning Developer</title>
     
-    <!-- Bootstrap 5.3.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
     
     <style>
-        :root {
-            --bs-body-font-family: 'Inter', sans-serif;
-            --text-primary: #e6edf3;
-            --text-secondary: #8b949e;
-            --text-muted: #6e7681;
-            --border-color: #21262d;
-            --surface-color: #161b22;
-            --surface-hover: #1c2128;
-            --accent-subtle: #58a6ff;
-            --success-subtle: #238636;
-        }
-        
         body {
-            font-family: var(--bs-body-font-family);
-            background: #0d1117;
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-weight: 400;
+            min-height: 75rem;
+            padding-top: 4.5rem;
+            width: 100%;
         }
-        
-        .resume-container {
-            max-width: 1000px;
-            margin: 0 auto;
+
+        .container {
+            max-width: 99% !important;
         }
-        
-        .header-section {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .section {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .section-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .section-title i {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
-        }
-        
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        .contact-item i {
-            color: var(--text-muted);
-            width: 16px;
+
+        .hero-section {
             text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
         }
-        
-        .experience-item {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .job-header {
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0d6efd;
             margin-bottom: 1rem;
         }
-        
-        .job-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-        
-        .company-name {
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-        }
-        
-        .job-duration {
-            background: var(--surface-hover);
-            color: var(--text-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            display: inline-block;
-        }
-        
-        .job-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-        
-        .achievement-section h6 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .achievement-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-        }
-        
-        .achievement-list li {
+
+        .hero-section .lead {
+            font-size: 1.25rem;
+            color: #6c757d;
             margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-            color: var(--text-secondary);
-            line-height: 1.5;
         }
-        
-        .achievement-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--text-muted);
-        }
-        
-        .tech-stack {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
             margin-top: 1rem;
         }
-        
-        .tech-stack strong {
-            color: var(--text-secondary);
-        }
-        
-        .competency-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .competency-category h5 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
+
+        .contact-info span {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 5px;
+            color: #6c757d;
         }
-        
-        .competency-category i {
-            font-size: 0.875rem;
-            color: var(--text-muted);
+
+        .cards-section {
+            margin-top: 3rem;
         }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .skill-tag {
-            background: var(--surface-hover);
-            color: var(--text-secondary);
-            padding: 0.375rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-        }
-        
-        .differentiator-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .differentiator-list li {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--surface-hover);
-            border-radius: 6px;
-            border-left: 3px solid var(--text-muted);
-        }
-        
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            background: var(--surface-hover);
-            border-radius: 6px;
-        }
-        
-        .stat-number {
-            display: block;
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-        
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .certification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .cert-category {
-            background: var(--surface-hover);
-            padding: 1.5rem;
-            border-radius: 6px;
-        }
-        
-        .cert-category h6 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .cert-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .cert-list li {
-            margin-bottom: 0.75rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .education-item {
-            padding: 1.5rem;
-            background: var(--surface-hover);
-            border-radius: 6px;
-            border-left: 3px solid var(--text-muted);
-        }
-        
-        .degree {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .school {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .years {
-            background: var(--surface-color);
-            color: var(--text-muted);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            display: inline-block;
-        }
-        
-        .what-sets-apart {
-            background: var(--surface-hover);
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
         }
-        
-        .what-sets-apart h4 {
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+
+        .portfolio-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #0d6efd;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(13, 110, 253, 0.2);
+            color: inherit;
+            text-decoration: none;
         }
-        
-        .what-sets-apart ul {
-            list-style: none;
-            padding: 0;
+
+        .portfolio-card .card-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 1rem;
         }
-        
-        .what-sets-apart li {
-            margin-bottom: 0.75rem;
-            padding-left: 2rem;
-            position: relative;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        
-        .what-sets-apart li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success-subtle);
+
+        .portfolio-card h3 {
+            font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 1rem;
+            color: #fff;
         }
-        
-        @media (max-width: 768px) {
-            .header-section {
-                padding: 2rem 1rem;
+
+        .portfolio-card p {
+            color: #6c757d;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .external-link-icon {
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            opacity: 0.7;
+        }
+
+        @media print {
+            /* Hide navigation and other non-essential elements */
+            nav, .navbar, .btn, a[href] {
+                display: none !important;
             }
             
-            .section {
-                padding: 1.5rem;
+            /* Reset colors for print */
+            body {
+                background: white !important;
+                color: black !important;
             }
             
-            h1 {
-                font-size: 2rem;
+            .portfolio-card {
+                background: white !important;
+                color: black !important;
+                border: 1px solid black !important;
             }
             
-            .subtitle {
-                font-size: 1.125rem;
-            }
-            
-            .competency-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .portfolio-card h3 {
+                color: black !important;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container-fluid py-4">
-        <div class="resume-container">
-            
-            <!-- Header Section -->
-            <div class="header-section">
-                <h1>JASON ALOI</h1>
-                <div class="subtitle">Senior AI Engineer & Machine Learning Developer</div>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <i class="bi bi-envelope"></i>
-                        <span>dev@jasonaloi.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-telephone"></i>
-                        <span>707-701-3570</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-globe"></i>
-                        <span>jasonaloi.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-github"></i>
-                        <span>GitHub: devaloi</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Summary -->
-            <div class="section">
-                <h3 class="section-title">
-                    <i class="bi bi-person"></i>
-                    Professional Summary
-                </h3>
-                
-                <p class="mb-4">
-                    Senior AI Engineer with <strong>25+ years</strong> of software development experience and deep expertise in cutting-edge AI technologies. Specialized in building production-ready AI systems, multi-agent orchestrations, and enterprise-scale machine learning solutions. Proven track record of leading development teams and delivering complex AI products that drive business transformation.
-                </p>
-                
-                <h6 style="color: var(--text-primary); margin-bottom: 1rem; font-weight: 600;">Key Differentiators:</h6>
-                <ul class="differentiator-list">
-                    <li><strong>780+ hours</strong> of certified AI/ML training with <strong>120 professional certifications</strong></li>
-                    <li>Expertise in <strong>Agentic AI</strong> frameworks including LangChain, RAG systems, and Model Context Protocol (MCP)</li>
-                    <li><strong>13+ years</strong> leading development teams and managing enterprise-scale AI implementations</li>
-                    <li>Full-stack AI development from <strong>model training</strong> to <strong>cloud deployment</strong> and <strong>production monitoring</strong></li>
-                </ul>
-            </div>
-
-            <!-- Core Competencies -->
-            <div class="section">
-                <h3 class="section-title">
-                    <i class="bi bi-gear"></i>
-                    Core AI & Technical Competencies
-                </h3>
-                
-                <div class="competency-grid">
-                    <div class="competency-category">
-                        <h5><i class="bi bi-cpu"></i>AI/ML Engineering</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Generative AI</span>
-                            <span class="skill-tag">Large Language Models (LLMs)</span>
-                            <span class="skill-tag">Retrieval-Augmented Generation (RAG)</span>
-                            <span class="skill-tag">Multi-Agent Orchestration</span>
-                            <span class="skill-tag">Agent Factory Pattern</span>
-                            <span class="skill-tag">Context Engineering</span>
-                            <span class="skill-tag">LangChain</span>
-                            <span class="skill-tag">Vector Embeddings</span>
-                            <span class="skill-tag">Vector Storage</span>
-                            <span class="skill-tag">LLMOps</span>
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Stable Diffusion</span>
-                            <span class="skill-tag">Hugging Face</span>
-                        </div>
-                    </div>
-                    
-                    <div class="competency-category">
-                        <h5><i class="bi bi-code-slash"></i>Programming & Frameworks</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python (76h+ certified)</span>
-                            <span class="skill-tag">JavaScript/TypeScript (170h+ certified)</span>
-                            <span class="skill-tag">Node.js (69h+)</span>
-                            <span class="skill-tag">FastAPI</span>
-                            <span class="skill-tag">Django</span>
-                            <span class="skill-tag">Flask</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">React (111h+ certified)</span>
-                            <span class="skill-tag">GraphQL</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">Microservices Architecture</span>
-                        </div>
-                    </div>
-                    
-                    <div class="competency-category">
-                        <h5><i class="bi bi-cloud"></i>Cloud & DevOps</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">AWS (48h+ certified)</span>
-                            <span class="skill-tag">Google Cloud Platform</span>
-                            <span class="skill-tag">Docker (29h+ certified)</span>
-                            <span class="skill-tag">Kubernetes (41h+)</span>
-                            <span class="skill-tag">CI/CD Pipelines</span>
-                            <span class="skill-tag">Infrastructure as Code</span>
-                            <span class="skill-tag">GitOps</span>
-                            <span class="skill-tag">Configuration Management</span>
-                            <span class="skill-tag">Cloud-Native AI Deployment</span>
-                            <span class="skill-tag">Containerized ML Workflows</span>
-                        </div>
-                    </div>
-                    
-                    <div class="competency-category">
-                        <h5><i class="bi bi-database"></i>Data Engineering</h5>
-                        <div class="skill-tags">
-                            <span class="skill-tag">SQL (69h+ certified)</span>
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Vector Databases</span>
-                            <span class="skill-tag">Data Analysis (33h+ certified)</span>
-                            <span class="skill-tag">Data Engineering</span>
-                            <span class="skill-tag">ETL/ELT Pipelines</span>
-                            <span class="skill-tag">Real-time Data Processing</span>
-                            <span class="skill-tag">Big Data Analytics</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Professional Experience -->
-            <div class="section">
-                <h3 class="section-title">
-                    <i class="bi bi-briefcase"></i>
-                    Professional Experience
-                </h3>
-                
-                <!-- Lead Developer - The Murray Group -->
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                            <div>
-                                <div class="job-title">Lead Developer</div>
-                                <div class="company-name">The Murray Group | Manhattan, NY (90% Remote)</div>
-                            </div>
-                            <div class="job-duration">2013 — 2023</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-description">
-                        Led enterprise AI transformation initiatives and managed full-stack development teams for a Manhattan-based technology consultancy.
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="achievement-section">
-                                <h6>AI & Machine Learning Leadership:</h6>
-                                <ul class="achievement-list">
-                                    <li>Architected and deployed <strong>production AI systems</strong> serving 100K+ daily users with 99.9% uptime</li>
-                                    <li>Implemented <strong>multi-agent AI workflows</strong> reducing manual processing time by 75%</li>
-                                    <li>Built <strong>custom RAG systems</strong> for enterprise knowledge management, improving query accuracy by 60%</li>
-                                    <li>Designed <strong>automated DevOps pipelines</strong> for ML model deployment and monitoring</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="achievement-section">
-                                <h6>Technical Achievements:</h6>
-                                <ul class="achievement-list">
-                                    <li>Directed <strong>cloud-native infrastructure</strong> migration (AWS/Docker/K8s) supporting 10x traffic growth</li>
-                                    <li>Established <strong>development best practices</strong> including automated testing, code reviews, and deployment pipelines</li>
-                                    <li>Led <strong>cross-functional teams</strong> of 8+ developers, ensuring on-time delivery of mission-critical applications</li>
-                                    <li>Implemented <strong>security-first architecture</strong> with IAM, encryption, and vulnerability management</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <strong>Key Technologies:</strong> Python, JavaScript, Node.js, React, AWS (EC2, S3, Lambda), Docker, Kubernetes, MongoDB, PostgreSQL, Git/GitHub, Apache, Nginx
-                    </div>
-                </div>
-
-                <!-- Senior Applications Engineer - Casebook -->
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                            <div>
-                                <div class="job-title">Senior Applications Engineer</div>
-                                <div class="company-name">Casebook at Pivotal Labs / IDEO | Manhattan, NY</div>
-                            </div>
-                            <div class="job-duration">2010 — 2012</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-description">
-                        Developed next-generation social impact applications for underserved communities at a leading design consultancy.
-                    </div>
-                    
-                    <div class="achievement-section">
-                        <h6>Product Development:</h6>
-                        <ul class="achievement-list">
-                            <li>Built <strong>multiple versions of Casebook</strong>, a social services case management platform serving 50+ agencies</li>
-                            <li>Collaborated with <strong>design teams</strong> to create intuitive user experiences for complex data workflows</li>
-                            <li>Maintained <strong>100% client satisfaction</strong> across all executive and stakeholder relationships</li>
-                            <li>Implemented <strong>agile development practices</strong> with continuous integration and user feedback loops</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <strong>Key Technologies:</strong> Ruby on Rails, JavaScript, TypeScript, GraphQL, AngularJS, PostgreSQL, MySQL, MongoDB, Apollo, RSpec, Jest
-                    </div>
-                </div>
-
-                <!-- Independent Technology Consultant -->
-                <div class="experience-item">
-                    <div class="job-header">
-                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
-                            <div>
-                                <div class="job-title">Independent Technology Consultant</div>
-                                <div class="company-name">100+ Organizations Worldwide</div>
-                            </div>
-                            <div class="job-duration">1998 — Present</div>
-                        </div>
-                    </div>
-                    
-                    <div class="job-description">
-                        Delivered full-stack AI and web development solutions for diverse clients ranging from startups to Fortune 500 companies.
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="achievement-section">
-                                <h6>AI Development Expertise:</h6>
-                                <ul class="achievement-list">
-                                    <li>Built <strong>custom AI agents</strong> for business process automation and customer service optimization</li>
-                                    <li>Developed <strong>computer vision systems</strong> for quality control and inventory management</li>
-                                    <li>Created <strong>NLP-powered applications</strong> for content analysis and automated reporting</li>
-                                    <li>Implemented <strong>recommendation engines</strong> driving 25%+ increases in client revenue</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="achievement-section">
-                                <h6>Client Success Highlights:</h6>
-                                <ul class="achievement-list">
-                                    <li><strong>Banking:</strong> Fraud detection systems with 95% accuracy using ensemble ML models</li>
-                                    <li><strong>Healthcare:</strong> HIPAA-compliant AI diagnostic tools improving patient outcome predictions</li>
-                                    <li><strong>E-commerce:</strong> Personalization engines increasing conversion rates by 30%</li>
-                                    <li><strong>Manufacturing:</strong> Predictive maintenance systems reducing downtime by 40%</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-stack">
-                        <strong>Core Competencies:</strong> End-to-end AI product development, Technical architecture, Project management, Client relations, Cross-industry domain expertise
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="section">
-                <h3 class="section-title">
-                    <i class="bi bi-mortarboard"></i>
-                    Education
-                </h3>
-                
-                <div class="education-grid">
-                    <div class="education-item">
-                        <div class="degree">Bachelor of Science, Management Information Systems</div>
-                        <div class="school">SUNY Empire State College | Rochester, NY</div>
-                        <div class="years">2005-2007</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="degree">Associate of Science, Management Information Systems</div>
-                        <div class="school">SUNY College at Brockport | Brockport, NY</div>
-                        <div class="years">2003-2005</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div class="section">
-                <h3 class="section-title">
-                    <i class="bi bi-award"></i>
-                    Certifications & Professional Development
-                </h3>
-                
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <span class="stat-number">120</span>
-                        <span class="stat-label">Total Certifications</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">780+</span>
-                        <span class="stat-label">Hours of Training</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">28</span>
-                        <span class="stat-label">Technology Ecosystems</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">12</span>
-                        <span class="stat-label">Exam-Based Certifications</span>
-                    </div>
-                </div>
-                
-                <div class="certification-grid">
-                    <div class="cert-category">
-                        <h6>Recent AI/ML Certifications (2025)</h6>
-                        <ul class="cert-list">
-                            <li><strong>AI Automation & Agents with Model Context Protocol</strong> (13.5h) - Python, LangChain, RAG</li>
-                            <li><strong>AWS Certified Machine Learning Engineer Associate</strong> (25h) - Production ML systems</li>
-                            <li><strong>Complete Guide to Evaluating Large Language Models</strong> (8h) - LLM performance optimization</li>
-                            <li><strong>Programming Generative AI with PyTorch and Hugging Face</strong> (18h) - Advanced model training</li>
-                            <li><strong>Certified Kubernetes Security Specialist (CKS)</strong> (20h) - Secure container orchestration</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="cert-category">
-                        <h6>Key Professional Certifications</h6>
-                        <ul class="cert-list">
-                            <li><strong>AWS Certified Solutions Architect Associate</strong> (CompTIA/LinkedIn)</li>
-                            <li><strong>CompTIA Security+</strong> (SY0-701)</li>
-                            <li><strong>Docker Foundations Professional Certificate</strong></li>
-                            <li><strong>OpenEDG Python Institute Programming Professional Certificate</strong></li>
-                            <li><strong>Google Cloud Professional Cloud Architect</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- What Sets Me Apart -->
-            <div class="what-sets-apart">
-                <h4>What Sets Me Apart</h4>
-                <ul>
-                    <li><strong>Proven AI Production Experience</strong> - Not just theory; I've deployed AI systems serving real users at scale</li>
-                    <li><strong>Full-Stack AI Development</strong> - From model training to user interface to cloud deployment</li>
-                    <li><strong>Leadership & Mentorship</strong> - 13+ years managing development teams and fostering technical growth</li>
-                    <li><strong>Continuous Learning</strong> - 780+ hours of recent AI/ML training, staying ahead of industry trends</li>
-                    <li><strong>Business Impact Focus</strong> - Every AI solution designed to deliver measurable ROI and competitive advantage</li>
-                </ul>
+    <main class="container main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Jason Aloi</h1>
+            <p class="lead">Senior AI Engineer & Machine Learning Developer</p>
+            <div class="contact-info">
+                <span><i class="bi bi-envelope"></i> dev@jasonaloi.com</span>
+                <span><i class="bi bi-globe"></i> jasonaloi.com</span>
             </div>
         </div>
-    </div>
+
+        <!-- Portfolio Cards -->
+        <div class="cards-section">
+            <div class="row g-4">
+                <!-- Certificates Portfolio Card -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="certs.html" target="_blank" class="portfolio-card d-block">
+                        <div class="card-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <h3>Certificates Portfolio</h3>
+                        <p>Explore my comprehensive collection of professional certifications in AI, machine learning, cloud computing, and software development.</p>
+                        <i class="bi bi-box-arrow-up-right external-link-icon"></i>
+                    </a>
+                </div>
+
+                <!-- Resume Card -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="resume.html" target="_blank" class="portfolio-card d-block">
+                        <div class="card-icon">
+                            <i class="bi bi-file-person"></i>
+                        </div>
+                        <h3>Resume</h3>
+                        <p>View my professional experience, skills, and achievements in AI engineering and software development spanning 25+ years.</p>
+                        <i class="bi bi-box-arrow-up-right external-link-icon"></i>
+                    </a>
+                </div>
+
+                <!-- GitHub Profile Card -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://github.com/devaloi" target="_blank" class="portfolio-card d-block">
+                        <div class="card-icon">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <h3>My GitHub Profile</h3>
+                        <p>Check out my open-source projects, code repositories, and contributions to the developer community.</p>
+                        <i class="bi bi-box-arrow-up-right external-link-icon"></i>
+                    </a>
+                </div>
+
+                <!-- LinkedIn Profile Card -->
+                <div class="col-md-6 col-lg-3">
+                    <a href="https://linkedin.com/in/jaloi" target="_blank" class="portfolio-card d-block">
+                        <div class="card-icon">
+                            <i class="bi bi-linkedin"></i>
+                        </div>
+                        <h3>My LinkedIn Profile</h3>
+                        <p>Connect with me professionally and view my career journey, recommendations, and professional network.</p>
+                        <i class="bi bi-box-arrow-up-right external-link-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

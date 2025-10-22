@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume - Jason Aloi</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
+    
+    <style>
+        body {
+            min-height: 75rem;
+            padding-top: 4.5rem;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 99% !important;
+        }
+
+        @media print {
+            /* Hide navigation and other non-essential elements */
+            nav, .navbar, .btn, a[href] {
+                display: none !important;
+            }
+            
+            /* Reset colors for print */
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .list-group-item {
+                background: white !important;
+                color: black !important;
+                border: none !important;
+                border-bottom: 1px solid black !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 0 !important;
+                padding: 10px 0 !important;
+            }
+            
+            /* Print-friendly layout */
+            .list-group {
+                display: table !important;
+                width: 100% !important;
+            }
+            
+            .list-group-item {
+                display: table-row !important;
+            }
+            
+            .list-group-item > div:first-child {
+                display: table-cell !important;
+                padding: 8px 12px !important;
+                vertical-align: top !important;
+                width: 75% !important;
+                border: none !important;
+            }
+            
+            .list-group-item > div:last-child {
+                display: table-cell !important;
+                padding: 8px 12px !important;
+                vertical-align: top !important;
+                width: 25% !important;
+                border: none !important;
+            }
+            
+            /* Section title styling */
+            .fw-bold {
+                display: block !important;
+                margin-bottom: 5px !important;
+                color: black !important;
+                font-weight: bold !important;
+                font-size: 14px !important;
+            }
+            
+            /* Hide badges in print but show skill names as text */
+            .badge {
+                background: none !important;
+                color: black !important;
+                border: 1px solid black !important;
+                padding: 2px 4px !important;
+                margin: 1px !important;
+                font-size: 9px !important;
+            }
+            
+            /* Clean up spacing */
+            .ms-2, .me-auto, .ms-3 {
+                margin: 0 !important;
+            }
+            
+            /* Ensure page breaks between rows */
+            .list-group-item {
+                page-break-after: auto !important;
+                page-break-inside: avoid !important;
+            }
+            
+            /* Header styling */
+            .list-group-horizontal {
+                display: none !important;
+            }
+            
+            /* Add a print header */
+            .print-header {
+                display: block !important;
+                text-align: center !important;
+                font-size: 18px !important;
+                font-weight: bold !important;
+                margin-bottom: 20px !important;
+                color: black !important;
+            }
+            
+            /* Date styling */
+            .small.fw-light {
+                font-size: 10px !important;
+                color: black !important;
+                margin-left: 10px !important;
+            }
+        }
+
+        /* Screen-only styles - hide print header */
+        .print-header {
+            display: none;
+        }
+
+        /* Custom styles for resume sections */
+        .resume-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-info h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .contact-details span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0d6efd;
+            border-bottom: 2px solid #0d6efd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .company-name {
+            color: #0d6efd;
+            font-weight: 600;
+        }
+
+        .date-range {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .location {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .skill-category {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .skill-category h6 {
+            color: #0d6efd;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container main-container">
+        <div class="print-header">Resume - Jason Aloi</div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h1>Jason Aloi</h1>
+            <div class="contact-details">
+                <span><i class="bi bi-geo-alt"></i> Greenville 54942, United States</span>
+                <span><i class="bi bi-telephone"></i> 7077013570</span>
+                <span><i class="bi bi-envelope"></i> dev@jasonaloi.com</span>
+                <span><i class="bi bi-globe"></i> jasonaloi.com</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="resume-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Senior AI Engineer with 25+ years of software development experience & deep expertise in cutting-edge AI technologies. Specialized in building production-ready AI systems, multi-agent orchestrations, & enterprise-scale machine learning solutions. Proven track record of leading development teams & delivering complex AI products that drive business transformation.</p>
+            
+            <h5 class="mt-4 mb-3">Key Differentiators:</h5>
+            <ul>
+                <li>780+ hours of certified AI/ML training with 276 professional certifications</li>
+                <li>Expert in Agentic AI frameworks including LangChain, RAG systems, and Model Context Protocol (MCP)</li>
+                <li>13+ years leading development teams and managing enterprise-scale AI implementations</li>
+                <li>Full-stack AI development from model training to cloud deployment and production monitoring</li>
+            </ul>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="resume-section">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h6>AI/ML Engineering</h6>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-primary">Generative AI</span>
+                        <span class="badge bg-primary">Large Language Models</span>
+                        <span class="badge bg-primary">RAG</span>
+                        <span class="badge bg-primary">Multi-Agent Orchestration</span>
+                        <span class="badge bg-primary">LangChain</span>
+                        <span class="badge bg-primary">Vector Embeddings</span>
+                        <span class="badge bg-primary">Machine Learning</span>
+                        <span class="badge bg-primary">Deep Learning</span>
+                        <span class="badge bg-primary">Stable Diffusion</span>
+                        <span class="badge bg-primary">Hugging Face</span>
+                        <span class="badge bg-primary">PyTorch</span>
+                        <span class="badge bg-primary">TensorFlow</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h6>Programming & Frameworks</h6>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">Python</span>
+                        <span class="badge border border-light text-light">JavaScript/TypeScript</span>
+                        <span class="badge border border-light text-light">Node.js</span>
+                        <span class="badge border border-light text-light">FastAPI</span>
+                        <span class="badge border border-light text-light">Django</span>
+                        <span class="badge border border-light text-light">Flask</span>
+                        <span class="badge border border-light text-light">Express.js</span>
+                        <span class="badge border border-light text-light">React</span>
+                        <span class="badge border border-light text-light">GraphQL</span>
+                        <span class="badge border border-light text-light">REST APIs</span>
+                        <span class="badge border border-light text-light">Microservices</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h6>Cloud & DevOps</h6>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">AWS</span>
+                        <span class="badge border border-light text-light">Google Cloud Platform</span>
+                        <span class="badge border border-light text-light">Docker</span>
+                        <span class="badge border border-light text-light">Kubernetes</span>
+                        <span class="badge border border-light text-light">CI/CD Pipelines</span>
+                        <span class="badge border border-light text-light">Infrastructure as Code</span>
+                        <span class="badge border border-light text-light">GitOps</span>
+                        <span class="badge border border-light text-light">Cloud-Native AI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h6>Data Engineering</h6>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">SQL</span>
+                        <span class="badge border border-light text-light">PostgreSQL</span>
+                        <span class="badge border border-light text-light">MongoDB</span>
+                        <span class="badge border border-light text-light">Vector Databases</span>
+                        <span class="badge border border-light text-light">Data Analysis</span>
+                        <span class="badge border border-light text-light">ETL/ELT Pipelines</span>
+                        <span class="badge border border-light text-light">Real-time Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="resume-section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <ul class="list-group mb-4">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="job-title">Independent Projects, Contracts (Dev, Design, PM)</span>
+                            <span class="ms-3 small fw-light date-range">01/1998 – present</span>
+                        </div>
+                        <div class="company-name">Freelance</div>
+                        <div class="location">Remote</div>
+                        <p class="mt-2">Design and develop custom AI-powered applications, automation systems, and full-stack solutions for diverse clients. Recent focus on generative AI, LLM orchestration, and intelligent agent systems.</p>
+                        <div class="mt-2">
+                            <strong>Recent AI Projects:</strong>
+                            <ul class="mt-1">
+                                <li>Built multi-agent orchestration systems using LangChain and RAG architectures</li>
+                                <li>Developed intelligent automation workflows with Model Context Protocol integration</li>
+                                <li>Created production-ready AI applications with vector embeddings and semantic search</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-primary">AI/ML</span>
+                        <span class="badge bg-primary">Full-Stack Development</span>
+                        <span class="badge bg-primary">Project Management</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="job-title">Executive Director</span>
+                            <span class="ms-3 small fw-light date-range">06/2016 – 12/2021</span>
+                        </div>
+                        <div class="company-name">Downs2Earth</div>
+                        <div class="location">Green Bay, United States</div>
+                        <p class="mt-2">Built and led a mission-driven organization at the intersection of environmental advocacy and disability inclusion. Established and managed a team of 25 members across seven countries and multiple time zones, developing remote management systems and cross-cultural communication strategies that enabled global collaboration and community impact.</p>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">Leadership</span>
+                        <span class="badge border border-light text-light">Remote Management</span>
+                        <span class="badge border border-light text-light">Global Teams</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-section">
+            <h2 class="section-title">Education</h2>
+            
+            <ul class="list-group mb-4">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="job-title">Bachelor of Science - Management Information Systems</span>
+                            <span class="ms-3 small fw-light date-range">01/2005 – 01/2007</span>
+                        </div>
+                        <div class="company-name">SUNY Empire State College</div>
+                        <div class="location">Rochester, United States</div>
+                        <div class="mt-1"><strong>GPA:</strong> 3.8</div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">Information Systems</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="job-title">Associates Degree</span>
+                            <span class="ms-3 small fw-light date-range">01/2003 – 01/2005</span>
+                        </div>
+                        <div class="company-name">SUNY Brockport</div>
+                        <div class="location">Brockport, United States</div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">General Studies</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Recent Certificates & Training -->
+        <div class="resume-section">
+            <h2 class="section-title">Recent Certificates & Training</h2>
+            <p class="mb-3"><strong>276 professional certifications totaling 780+ hours</strong> in AI/ML, cloud platforms, and full-stack development.</p>
+            <p class="mb-4">React (111h+) | JavaScript/TypeScript (170h+) | Python (76h+) | Node.js (69h+) | SQL (69h+) | AWS (48h+) | Kubernetes (41h+) | Data Analysis (33h+) | Docker (29h+)</p>
+            
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="text-decoration-none text-light">AI Automation & Agents with Model Context Protocol</span>
+                            <span class="badge rounded-pill border border-secondary ms-2 small">13.5h</span>
+                            <span class="ms-3 small fw-light">08/2025</span>
+                        </div>
+                        <div class="cert-providers">
+                            <span class="small text-muted">Udemy - Python, LangChain, RAG</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-primary">AI Orchestration</span>
+                        <span class="badge bg-primary">RAG</span>
+                        <span class="badge bg-primary">LangChain</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="text-decoration-none text-light">Programming Generative AI with PyTorch & Hugging Face</span>
+                            <span class="badge rounded-pill border border-secondary ms-2 small">18h</span>
+                            <span class="ms-3 small fw-light">07/2025</span>
+                        </div>
+                        <div class="cert-providers">
+                            <span class="small text-muted">LinkedIn - Advanced model training</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge bg-primary">GenAI</span>
+                        <span class="badge bg-primary">HuggingFace</span>
+                        <span class="badge bg-primary">PyTorch</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="text-decoration-none text-light">AWS Certified Machine Learning Engineer Associate Cert Prep</span>
+                            <span class="ms-3 small fw-light">07/2025</span>
+                        </div>
+                        <div class="cert-providers">
+                            <span class="small text-muted">LinkedIn</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">AWS</span>
+                        <span class="badge border border-light text-light">Machine Learning</span>
+                    </div>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">
+                            <span class="text-decoration-none text-light">GitHub Actions Workshop</span>
+                            <span class="ms-3 small fw-light">07/2025</span>
+                        </div>
+                        <div class="cert-providers">
+                            <span class="small text-muted">LinkedIn - Microsoft Press</span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                        <span class="badge border border-light text-light">GitHub</span>
+                        <span class="badge border border-light text-light">CI/CD</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
