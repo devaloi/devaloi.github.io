@@ -12,6 +12,7 @@
             body { background: #212529; color: #f8f9fa; }
             .section { background-color: rgba(255, 255, 255, 0.05); }
             .skill-category { background-color: rgba(255, 255, 255, 0.03); }
+            a { color: #6ea8fe; }
         }
         @media (prefers-color-scheme: light) {
             :root { color-scheme: light; }
@@ -19,40 +20,49 @@
             .section { background-color: rgba(0, 0, 0, 0.02); }
             .skill-category { background-color: rgba(0, 0, 0, 0.02); }
         }
-        body { max-width: 900px; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, sans-serif; }
+        body { max-width: 900px; margin: 0 auto; padding: 2rem; font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
         h1 { font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem; }
-        .contact-info { text-align: center; margin-bottom: 2rem; color: #6c757d; }
-        .contact-info a { color: #0d6efd; text-decoration: none; }
+        .contact-info { text-align: center; margin-bottom: 2rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+        .contact-info a, .contact-info span { color: inherit; text-decoration: none; }
+        .contact-info a:hover { color: #0d6efd; }
         .section { padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; }
         .section-title { font-size: 1.4rem; font-weight: bold; color: #0d6efd; border-bottom: 2px solid #0d6efd; padding-bottom: 0.3rem; margin-bottom: 1rem; }
         .job { margin-bottom: 1.5rem; }
-        .job-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; margin-bottom: 0.3rem; }
         .job-company { font-weight: bold; font-size: 1.1rem; }
-        .job-location { color: #6c757d; font-size: 0.9rem; margin-left: 10px; }
+        .job-location { color: #6c757d; font-size: 0.9rem; }
         .job-title { color: #0d6efd; font-weight: 600; }
         .job-dates { color: #6c757d; font-size: 0.9rem; }
         .job ul { margin-top: 0.5rem; padding-left: 1.5rem; }
         .job li { margin-bottom: 0.4rem; }
         .education-item { margin-bottom: 1rem; }
-        .school-name { font-weight: bold; }
-        .degree { font-style: italic; }
+        .school-name { font-weight: bold; font-size: 1.05rem; }
+        .degree { font-style: italic; color: #6c757d; }
+        .grad-info { color: #6c757d; font-size: 0.9rem; }
         .cert-category { font-weight: bold; color: #0d6efd; margin-top: 1rem; margin-bottom: 0.5rem; }
-        .cert-list { padding-left: 1.5rem; }
+        .cert-list { padding-left: 1.5rem; margin-bottom: 0.5rem; }
+        .cert-list li { margin-bottom: 0.3rem; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
         .skill-category { padding: 1rem; border-radius: 5px; }
         .skill-category h6 { color: #0d6efd; font-weight: bold; margin-bottom: 0.5rem; font-size: 0.9rem; }
         .skill-category p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
         @media print {
-            body { max-width: 100%; padding: 1rem; font-size: 11px; }
-            .section { page-break-inside: avoid; padding: 0.5rem; }
+            body { max-width: 100%; padding: 0.5in; font-size: 10pt; }
+            .section { page-break-inside: avoid; padding: 0.5rem; margin-bottom: 0.5rem; background: none !important; }
             .job { page-break-inside: avoid; }
+            h1 { font-size: 18pt; }
+            .section-title { font-size: 12pt; }
         }
     </style>
 </head>
 <body>
     <h1>Jason Aloi</h1>
     <div class="contact-info">
-        <i class="bi bi-telephone"></i> +1(707)701-3570 | <a href="mailto:jason.aloi2026@gmail.com"><i class="bi bi-envelope"></i> jason.aloi2026@gmail.com</a> | <a href="https://linkedin.com/in/jasonaloi" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a> | <a href="https://github.com/jasonaloi" target="_blank"><i class="bi bi-github"></i> GitHub</a> | <a href="https://jasonaloi.com/" target="_blank"><i class="bi bi-globe"></i> jasonaloi.com/</a>
+        <span><i class="bi bi-telephone"></i> +1 (707) 701-3570</span>
+        <a href="mailto:jason.aloi2026@gmail.com"><i class="bi bi-envelope"></i> jason.aloi2026@gmail.com</a>
+        <a href="https://linkedin.com/in/jasonaloi" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/jasonaloi" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        <a href="https://jasonaloi.com/" target="_blank"><i class="bi bi-globe"></i> jasonaloi.com/</a>
     </div>
 
     <div class="section">
@@ -63,9 +73,9 @@
     <div class="section">
         <h2 class="section-title">Education</h2>
         <div class="education-item">
-            <div class="school-name">SUNY Empire State College May 2007</div>
-            <div class="degree">Bachelor of Science (BS), Information Systems GPA: 3.8</div>
-            <div></div>
+            <div class="school-name">SUNY Empire State College</div>
+            <div class="degree">Bachelor of Science (BS), Information Systems</div>
+            <div class="grad-info">May 2007 | GPA: 3.8</div>
         </div>
     </div>
 
@@ -74,42 +84,98 @@
         <div class="job">
             <div class="job-header">
                 <div>
-                    <span class="job-company"></span>
-                    <span class="job-location">Bendyworks Madison, United States</span>
+                    <span class="job-company">Independent Projects & Contracts</span>
+                    <span class="job-location"> — Remote</span>
                 </div>
-                <div class="job-dates">Senior Software Engineer October 2021 - August 2022</div>
+                <div class="job-dates">January 1998 - Present</div>
             </div>
-            <div class="job-title"></div>
+            <div class="job-title">Senior AI Engineer & Full-Stack Developer</div>
             <ul>
-                <li>Full-Stack Development: Delivered enterprise web and mobile applications in an Agile consulting environment using Ruby on</li>
-                <li>Architecture & Scale: Architected 3+ full-stack applications, reducing client operational costs by 30% through automation and</li>
-                <li>Performance Optimization: Optimized database queries and caching strategies, improving response times from 800ms to 200ms.</li>
-                <li>API Design: Developed RESTful and GraphQL APIs serving 10,000+ daily requests with 99.9% uptime.</li>
-                <li>Testing & QA: Established TDD/BDD practices, increasing test coverage from 45% to 85% and reducing production defects by</li>
-                <li>Mentorship: Mentored junior developers through pair programming and code reviews, improving team code quality scores by</li>
+                <li>AI/GenAI Development: Designs and develops custom AI-powered applications and intelligent agent systems.</li>
+                <li>Builds multi-agent orchestration systems using LangChain and RAG architectures to automate complex workflows.</li>
+                <li>Implements vector embeddings and semantic search capabilities for optimized data retrieval.</li>
+                <li>Creates ML pipelines utilizing PyTorch and Hugging Face transformers for model training and deployment.</li>
+                <li>Develops custom GPT applications and prompt engineering solutions to solve specific client problems.</li>
+                <li>Full-Stack Engineering: Delivers enterprise solutions across industries: E-commerce, CRM, LMS, Real Estate, FinTech, etc.</li>
+                <li>Provides technical leadership in roadmap definition and establishing engineering best practices for over 100+ individuals, organizations, and small businesses, with many repeated hires.</li>
+                <li>Participates in product strategy and roadmapping, exercising cross-functional collaboration across departments to define requirements and deliver scalable solutions.</li>
             </ul>
         </div>
         <div class="job">
             <div class="job-header">
                 <div>
-                    <span class="job-company">about 20%.</span>
-                    <span class="job-location">Downs2Earth Green Bay, WI, USA</span>
+                    <span class="job-company">Bendyworks</span>
+                    <span class="job-location"> — Madison, United States</span>
                 </div>
-                <div class="job-dates">Executive Director June 2016 - December 2021</div>
+                <div class="job-dates">October 2021 - August 2022</div>
             </div>
-            <div class="job-title"></div>
+            <div class="job-title">Senior Software Engineer</div>
+            <ul>
+                <li>Full-Stack Development: Delivered enterprise web and mobile applications in an Agile consulting environment using Ruby on Rails, Elixir/Phoenix, Node.js, Python, and React.</li>
+                <li>Architecture & Scale: Architected 3+ full-stack applications, reducing client operational costs by 30% through automation and workflow improvements.</li>
+                <li>Performance Optimization: Optimized database queries and caching strategies, improving response times from 800ms to 200ms.</li>
+                <li>API Design: Developed RESTful and GraphQL APIs serving 10,000+ daily requests with 99.9% uptime.</li>
+                <li>Testing & QA: Established TDD/BDD practices, increasing test coverage from 45% to 85% and reducing production defects by over 25%.</li>
+                <li>Mentorship: Mentored junior developers through pair programming and code reviews, improving team code quality scores by about 20%.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">Downs2Earth</span>
+                    <span class="job-location"> — Green Bay, WI, USA</span>
+                </div>
+                <div class="job-dates">June 2016 - December 2021</div>
+            </div>
+            <div class="job-title">Executive Director</div>
             <ul>
                 <li>Leadership: Built and led a mission-driven organization, establishing and managing a remote team of 25 across seven countries.</li>
-                <li>Collaboration & Strategy: Developed remote management systems and cross-cultural communication strategies that enabled</li>
+                <li>Collaboration & Strategy: Developed remote management systems and cross-cultural communication strategies that enabled global collaboration and community impact.</li>
                 <li>Operations: Managed cross-functional operations and stakeholder relations in a distributed environment.</li>
-                <li>Application Development: Developed and maintained Ruby on Rails applications with a focus on scalable architecture and</li>
+            </ul>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">Casebook PBC (at Pivotal Labs / IDEO)</span>
+                    <span class="job-location"> — New York, NY, USA</span>
+                </div>
+                <div class="job-dates">January 2010 - January 2012</div>
+            </div>
+            <div class="job-title">Senior Web Application Developer</div>
+            <ul>
+                <li>Application Development: Developed and maintained Ruby on Rails applications with a focus on scalable architecture and test-driven development (TDD).</li>
                 <li>Frontend Engineering: Built progressive web applications using modern JavaScript frameworks and libraries.</li>
-                <li>Database Optimization: Optimized database performance utilizing MongoDB sharding and partitioning strategies for distributed</li>
+                <li>Database Optimization: Optimized database performance utilizing MongoDB sharding and partitioning strategies for distributed systems.</li>
                 <li>DevOps: Established CI/CD workflows and automated deployment processes utilizing Heroku and Chef.</li>
                 <li>Collaboration: Collaborated deeply with design teams and clients to maximize customer satisfaction metrics, exceeding targets.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">Stylesight</span>
+                    <span class="job-location"> — New York, NY, USA</span>
+                </div>
+                <div class="job-dates">January 2009 - June 2010</div>
+            </div>
+            <div class="job-title">Senior Web Application Developer</div>
+            <ul>
                 <li>Leadership: Supervised junior web developers, analyzing areas of weakness and scheduling training sessions.</li>
                 <li>Testing: Showed exemplary skills in debugging websites and ensuring updated software documentation.</li>
                 <li>Mobile Development: Collaborated with mobile developers to create and build mobile-responsive websites.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <span class="job-company">2nd Nature Interactive</span>
+                    <span class="job-location"> — Syracuse, NY, USA</span>
+                </div>
+                <div class="job-dates">April 2007 - December 2009</div>
+            </div>
+            <div class="job-title">Application Engineer & Development Lead</div>
+            <ul>
                 <li>Technical Leadership: Supervised the development of new engineering software and managed productivity of the technical team.</li>
                 <li>Database Administration: Meticulously performed all database changes and administration tasks on web portal SQL servers.</li>
                 <li>Problem Solving: Spearheaded projects by creating and running SQL queries for multiple tasks across all environments.</li>
@@ -145,59 +211,35 @@
         <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <h6>Development</h6>
-                <p>Collaborated with mobile developers to create and build mobile-responsive websites. 2nd Nature Interactive Syracuse, NY, USA Application Engineer & Development Lead April 2007 - December 2009 •</p>
+                <h6>AI, Machine Learning & Generative AI</h6>
+                <p>Generative AI, Machine Learning (ML), Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Neural Networks, Deep Learning, Model Context Protocol (MCP), Computer Vision, LangChain, PyTorch, Tensorflow, Hugging Face, Stable Diffusion, NumPy, Pandas, OpenAI (ChatGPT API), ClaudeCode, Cursor, Midjourney, DALL-E, Flowise, n8n, Otter.ai, RunwayML, Multi-Agent Orchestration, Vector Embeddings, Prompt Engineering, Fine-Tuning, Human-in-the-Loop (HITL), AI Orchestration, Workflow Automation</p>
             </div>
             <div class="skill-category">
-                <h6>Leadership</h6>
-                <p>Supervised the development of new engineering software and managed productivity of the technical team. •</p>
+                <h6>Programming Languages</h6>
+                <p>Python, JavaScript, TypeScript, Ruby on Rails, Elixir/Phoenix, PHP, Go (Golang), Java, C/C++, Rust, Swift, Objective-C, Bash/Shell Scripting, ActionScript, CoffeeScript, AppleScript, Perl, Clojure</p>
             </div>
             <div class="skill-category">
-                <h6>Administration</h6>
-                <p>Meticulously performed all database changes and administration tasks on web portal SQL servers. •</p>
+                <h6>Cloud Infrastructure, DevOps & CI/CD</h6>
+                <p>AWS (EC2, S3, Beanstalk, Lightsail, IAM), Google Cloud Platform (GCP), Azure, Heroku, DigitalOcean, Rackspace, Hostinger, GoDaddy, Docker, Kubernetes, Docker Compose, Helm, Terraform, Ansible, CloudFormation, Chef, Puppet, CI/CD Pipelines, Github Actions, Git, GitHub, GitFlow, Bitbucket, Apache Subversion (SVN), Linux (Ubuntu/Debian/RedHat), Nginx, Apache, SSH, VirtualBox, Vagrant, Raspberry Pi/Raspbian, Cpanel</p>
             </div>
             <div class="skill-category">
-                <h6>Solving</h6>
-                <p>Spearheaded projects by creating and running SQL queries for multiple tasks across all environments. Certifications Selected from 275+ continuous learning certifications (2020–2025). I like to figure out systems and learn new things. AI Agents & Machine Learning • AI Automation & Agents with Model Context Protocol (MCP) | Udemy (2025) •</p>
+                <h6>Backend Development & API Architecture</h6>
+                <p>FastAPI, Django, Flask, Node.js, Express.js, Next.js, Ruby on Rails (RoR), Elixir/Phoenix, Sinatra, Microservices Architecture, REST APIs, GraphQL (Apollo), Serverless, Event-Driven Architecture, Distributed Systems, OAuth, JWT, OWASP, Role-based Access Control</p>
             </div>
             <div class="skill-category">
-                <h6>AI</h6>
-                <p>Generative AI, Machine Learning (ML), Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Neural Networks, Deep Learning, Model Context Protocol (MCP), Computer Vision, LangChain, PyTorch, Tensorflow, Hugging Face, Stable Diffusion, NumPy, Pandas, OpenAI (ChatGPT API), ClaudeCode, Cursor, Midjourney, DALL-E, Flowise, n8n, Otter.ai, RunwayML, Multi-Agent Orchestration, Vector Embeddings, Prompt Engineering, Fine-Tuning, Human-in-the-</p>
+                <h6>Frontend Development & UI/UX</h6>
+                <p>React.js, Redux, Angular (AngularJS/Angular 2+), Vue.js, Gatsby, Tailwind CSS, Bootstrap, Material-UI, SCSS/SASS, CSS3, HTML5, Styled Components, Adobe Creative Suite, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Figma, Balsamiq, SketchUp, CAD, Visio, Responsive Design, Human-Centered Design, Wireframe, User Stories, Accessibility (WCAG), Single Page Applications (SPA), Progressive Web Apps (PWA)</p>
             </div>
             <div class="skill-category">
-                <h6>Kubernetes</h6>
-                <p>Provisioning for Infrastructure as Code | LinkedIn (2025) • AWS Certified Solutions Architect – Associate (SAA-C03) Cert Prep | LinkedIn (2025) • Docker Foundations Professional Certificate | Docker (2025) Data Engineering & Product Leadership • Complete Guide to SQL for Data Engineering | LinkedIn (2025) •</p>
+                <h6>Databases & Data Engineering</h6>
+                <p>PostgreSQL, MySQL, Microsoft SQL Server, SQLite, Oracle, MongoDB, Redis, Cassandra, Dynamodb, Vector Databases (Pinecone, Weaviate, Milvus), Embeddings, ETL/ELT Pipelines, Data Analysis, Real-time Data Processing, Apache Spark, Airflow, Databricks, Apache Kafka, 3D Modeling, FileMaker Pro, MS Access</p>
             </div>
             <div class="skill-category">
-                <h6>Management</h6>
-                <p>Building a Product Strategy & Roadmap | PMI (2025) • Aha! Product Management Professional Certificate | Aha! (2025)</p>
+                <h6>Testing (QA) & Code Quality</h6>
+                <p>Test-Driven Development (TDD), Behavior-Driven Development (BDD), Unit Testing, Integration Testing, End-to-End (E2E) Testing, Jest, RSpec, Cucumber, Cypress, Selenium, PyTest, Mocha/Chai, Code Coverage Analysis, Static Analysis, Linting (ESLint, Pylint), Code Reviews</p>
             </div>
             <div class="skill-category">
-                <h6>Languages</h6>
-                <p>Python, JavaScript, TypeScript, Ruby on Rails, Elixir/Phoenix, PHP, Go (Golang), Java, C/C++, Rust, Swift, Objective-C, Bash/Shell Scripting, ActionScript, CoffeeScript, AppleScript, Perl, Clojure Cloud Infrastructure, DevOps & CI/</p>
-            </div>
-            <div class="skill-category">
-                <h6>CD</h6>
-                <p>AWS (EC2, S3, Beanstalk, Lightsail, IAM), Google Cloud Platform (GCP), Azure, Heroku, DigitalOcean, Rackspace, Hostinger, GoDaddy, Docker, Kubernetes, Docker Compose, Helm, Terraform, Ansible, CloudFormation, Chef, Puppet, CI/CD Pipelines, Github Actions, Git, GitHub, GitFlow, Bitbucket, Apache Subversion (SVN), Linux (Ubuntu/Debian/RedHat), Nginx, Apache, SSH, VirtualBox, Vagrant, Raspberry Pi/</p>
-            </div>
-            <div class="skill-category">
-                <h6>Architecture</h6>
-                <p>FastAPI, Django, Flask, Node.js, Express.js, Next.js, Ruby on Rails (RoR), Elixir/Phoenix, Sinatra, Microservices Architecture, REST APIs, GraphQL (Apollo), Serverless, Event-Driven Architecture, Distributed Systems, OAuth, JWT, OWASP, Role-based Access Control Frontend Development & UI/</p>
-            </div>
-            <div class="skill-category">
-                <h6>UX</h6>
-                <p>React.js, Redux, Angular (AngularJS/Angular 2+), Vue.js, Gatsby, Tailwind CSS, Bootstrap, Material-UI, SCSS/SASS, CSS3, HTML5, Styled Components, Adobe Creative Suite, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Figma, Balsamiq, SketchUp, CAD, Visio, Responsive Design, Human-</p>
-            </div>
-            <div class="skill-category">
-                <h6>Engineering</h6>
-                <p>PostgreSQL, MySQL, Microsoft SQL Server, SQLite, Oracle, MongoDB, Redis, Cassandra, Dynamodb, Vector Databases (Pinecone, Weaviate, Milvus), Embeddings, ETL/ELT Pipelines, Data Analysis, Real-time Data Processing, Apache Spark, Airflow, Databricks, Apache Kafka, 3</p>
-            </div>
-            <div class="skill-category">
-                <h6>Quality</h6>
-                <p>Test-Driven Development (TDD), Behavior-Driven Development (BDD), Unit Testing, Integration Testing, End-to-End (E2E) Testing, Jest, RSpec, Cucumber, Cypress, Selenium, PyTest, Mocha/</p>
-            </div>
-            <div class="skill-category">
-                <h6>Skills</h6>
+                <h6>Methodologies, Leadership & Soft Skills</h6>
                 <p>Technical Leadership, Agile/Scrum, Kanban, Project Management, Roadmap Definition, Strategic Planning, Mentorship, Cross-Functional Collaboration, Problem Solving, Stakeholder Management, Interpersonal Communication, Remote Team Management, Conflict Resolution</p>
             </div>
         </div>
