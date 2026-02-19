@@ -21,141 +21,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
     
     <style>
-        body {
-            min-height: 75rem;
-            padding-top: 4.5rem;
-            width: 100%;
-        }
-
-        .container {
-            max-width: 99% !important;
-        }
-
+        body { padding-top: 4.5rem; }
+        .container { max-width: 900px; }
         @media print {
-            /* Hide navigation and other non-essential elements */
-            nav, .navbar, .btn, a[href] {
-                display: none !important;
-            }
-            
-            /* Reset colors for print */
-            body {
-                background: white !important;
-                color: black !important;
-            }
-            
-            .list-group-item {
-                background: white !important;
-                color: black !important;
-                border: none !important;
-                border-bottom: 1px solid black !important;
-                page-break-inside: avoid !important;
-                margin-bottom: 0 !important;
-                padding: 10px 0 !important;
-            }
-            
-            /* Print-friendly layout */
-            .list-group {
-                display: table !important;
-                width: 100% !important;
-            }
-            
-            .list-group-item {
-                display: table-row !important;
-            }
-            
-            .list-group-item > div:first-child {
-                display: table-cell !important;
-                padding: 8px 12px !important;
-                vertical-align: top !important;
-                width: 75% !important;
-                border: none !important;
-            }
-            
-            .list-group-item > div:last-child {
-                display: table-cell !important;
-                padding: 8px 12px !important;
-                vertical-align: top !important;
-                width: 25% !important;
-                border: none !important;
-            }
-            
-            /* Section title styling */
-            .fw-bold {
-                display: block !important;
-                margin-bottom: 5px !important;
-                color: black !important;
-                font-weight: bold !important;
-                font-size: 14px !important;
-            }
-            
-            /* Hide badges in print but show skill names as text */
-            .badge {
-                background: none !important;
-                color: black !important;
-                border: 1px solid black !important;
-                padding: 2px 4px !important;
-                margin: 1px !important;
-                font-size: 9px !important;
-            }
-            
-            /* Clean up spacing */
-            .ms-2, .me-auto, .ms-3 {
-                margin: 0 !important;
-            }
-            
-            /* Ensure page breaks between rows */
-            .list-group-item {
-                page-break-after: auto !important;
-                page-break-inside: avoid !important;
-            }
-            
-            /* Header styling */
-            .list-group-horizontal {
-                display: none !important;
-            }
-            
-            /* Add a print header */
-            .print-header {
-                display: block !important;
-                text-align: center !important;
-                font-size: 18px !important;
-                font-weight: bold !important;
-                margin-bottom: 20px !important;
-                color: black !important;
-            }
-            
-            /* Date styling */
-            .small.fw-light {
-                font-size: 10px !important;
-                color: black !important;
-                margin-left: 10px !important;
-            }
+            nav, .navbar { display: none !important; }
+            body { background: white !important; color: black !important; padding-top: 0; }
+            .section { background: white !important; }
         }
-
-        /* Screen-only styles - hide print header */
-        .print-header {
-            display: none;
-        }
-
-        /* Custom styles for resume sections */
-        .resume-section {
+        .section {
             margin: 20px 0;
-            padding: 15px;
+            padding: 20px;
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
         }
-
-        .contact-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .contact-info h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
+        .contact-info { text-align: center; margin-bottom: 30px; }
+        .contact-info h1 { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
         .contact-details {
             display: flex;
             justify-content: center;
@@ -163,13 +43,8 @@
             flex-wrap: wrap;
             margin-top: 10px;
         }
-
-        .contact-details span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
+        .contact-details a { color: inherit; text-decoration: none; }
+        .contact-details a:hover { color: #0d6efd; }
         .section-title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -178,45 +53,39 @@
             padding-bottom: 5px;
             margin-bottom: 20px;
         }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+        .job { margin-bottom: 25px; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
         }
-
-        .company-name {
-            color: #0d6efd;
-            font-weight: 600;
-        }
-
-        .date-range {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
-        .location {
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
+        .job-company { font-weight: bold; font-size: 1.1rem; }
+        .job-location { color: #6c757d; font-size: 0.9rem; margin-left: 10px; }
+        .job-title { color: #0d6efd; font-weight: 600; }
+        .job-dates { color: #6c757d; font-size: 0.9rem; }
+        .job ul { margin-top: 10px; padding-left: 20px; }
+        .job li { margin-bottom: 8px; }
+        .education-item { margin-bottom: 15px; }
+        .school-name { font-weight: bold; font-size: 1.1rem; }
+        .degree { font-style: italic; }
+        .grad-info { color: #6c757d; font-size: 0.9rem; }
+        .cert-category { font-weight: bold; color: #0d6efd; margin-top: 15px; margin-bottom: 10px; }
+        .cert-list { padding-left: 20px; }
+        .cert-list li { margin-bottom: 5px; }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
-
         .skill-category {
             background-color: rgba(255, 255, 255, 0.03);
             padding: 15px;
             border-radius: 5px;
         }
-
-        .skill-category h6 {
-            color: #0d6efd;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+        .skill-category h6 { color: #0d6efd; font-weight: bold; margin-bottom: 10px; }
+        .skill-category p { font-size: 0.9rem; margin: 0; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -241,342 +110,163 @@
         </div>
     </nav>
 
-    <main class="container main-container">
-        <div class="print-header">Resume - Jason Aloi</div>
-
+    <main class="container">
         <!-- Contact Information -->
         <div class="contact-info">
             <h1>Jason Aloi</h1>
             <div class="contact-details">
-                <span><i class="bi bi-geo-alt"></i> Greenville 54942, United States</span>
-                <span><i class="bi bi-telephone"></i> 7077013570</span>
-                <span><i class="bi bi-envelope"></i> dev@jasonaloi.com</span>
-                <span><i class="bi bi-globe"></i> jasonaloi.com</span>
+                <span><i class="bi bi-telephone"></i> +1(707)701-3570</span>
+                <a href="mailto:jason.aloi2026@gmail.com"><i class="bi bi-envelope"></i> jason.aloi2026@gmail.com</a>
+                <a href="https://linkedin.com/in/jasonaloi" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/jasonaloi" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+                <a href="https://jasonaloi.com/" target="_blank"><i class="bi bi-globe"></i> jasonaloi.com/</a>
             </div>
         </div>
 
-        <!-- Professional Summary -->
-        <div class="resume-section">
+        <div class="section">
             <h2 class="section-title">Professional Summary</h2>
-            <p>Senior AI Engineer with 25+ years of software development experience & deep expertise in cutting-edge AI technologies. Specialized in building production-ready AI systems, multi-agent orchestrations, & enterprise-scale machine learning solutions. Proven track record of leading development teams & delivering complex AI products that drive business transformation.</p>
-            
-            <h5 class="mt-4 mb-3">Key Differentiators:</h5>
-            <ul>
-                <li>780+ hours of certified AI/ML training with 120 professional certifications</li>
-                <li>Expert in Agentic AI frameworks including LangChain, RAG systems, and Model Context Protocol (MCP)</li>
-                <li>13+ years leading development teams and managing enterprise-scale AI implementations</li>
-                <li>Full-stack AI development from model training to cloud deployment and production monitoring</li>
+            <p>Senior AI Engineer and Technical Leader with 25+ years of experience architecting and developing scalable software solutions. Specialized in building production-ready and accurate AI systems, multi-agent orchestrations, and enterprise-scale Machine Learning (ML) pipelines. Proven track record of leading high-performing engineering teams, driving innovation, and delivering complex products for diverse industries. Deep expertise in Python, many types of AI, and cloud infrastructure (AWS).</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="school-name">SUNY Empire State College May 2007</div>
+                <div class="degree">Bachelor of Science (BS), Information Systems GPA: 3.8</div>
+                <div class="grad-info"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-company"></span>
+                        <span class="job-location">Bendyworks Madison, United States</span>
+                    </div>
+                    <div class="job-dates">Senior Software Engineer October 2021 - August 2022</div>
+                </div>
+                <div class="job-title"></div>
+                <ul>
+                    <li>Full-Stack Development: Delivered enterprise web and mobile applications in an Agile consulting environment using Ruby on</li>
+                    <li>Architecture & Scale: Architected 3+ full-stack applications, reducing client operational costs by 30% through automation and</li>
+                    <li>Performance Optimization: Optimized database queries and caching strategies, improving response times from 800ms to 200ms.</li>
+                    <li>API Design: Developed RESTful and GraphQL APIs serving 10,000+ daily requests with 99.9% uptime.</li>
+                    <li>Testing & QA: Established TDD/BDD practices, increasing test coverage from 45% to 85% and reducing production defects by</li>
+                    <li>Mentorship: Mentored junior developers through pair programming and code reviews, improving team code quality scores by</li>
+                </ul>
+            </div>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-company">about 20%.</span>
+                        <span class="job-location">Downs2Earth Green Bay, WI, USA</span>
+                    </div>
+                    <div class="job-dates">Executive Director June 2016 - December 2021</div>
+                </div>
+                <div class="job-title"></div>
+                <ul>
+                    <li>Leadership: Built and led a mission-driven organization, establishing and managing a remote team of 25 across seven countries.</li>
+                    <li>Collaboration & Strategy: Developed remote management systems and cross-cultural communication strategies that enabled</li>
+                    <li>Operations: Managed cross-functional operations and stakeholder relations in a distributed environment.</li>
+                    <li>Application Development: Developed and maintained Ruby on Rails applications with a focus on scalable architecture and</li>
+                    <li>Frontend Engineering: Built progressive web applications using modern JavaScript frameworks and libraries.</li>
+                    <li>Database Optimization: Optimized database performance utilizing MongoDB sharding and partitioning strategies for distributed</li>
+                    <li>DevOps: Established CI/CD workflows and automated deployment processes utilizing Heroku and Chef.</li>
+                    <li>Collaboration: Collaborated deeply with design teams and clients to maximize customer satisfaction metrics, exceeding targets.</li>
+                    <li>Leadership: Supervised junior web developers, analyzing areas of weakness and scheduling training sessions.</li>
+                    <li>Testing: Showed exemplary skills in debugging websites and ensuring updated software documentation.</li>
+                    <li>Mobile Development: Collaborated with mobile developers to create and build mobile-responsive websites.</li>
+                    <li>Technical Leadership: Supervised the development of new engineering software and managed productivity of the technical team.</li>
+                    <li>Database Administration: Meticulously performed all database changes and administration tasks on web portal SQL servers.</li>
+                    <li>Problem Solving: Spearheaded projects by creating and running SQL queries for multiple tasks across all environments.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <p><em>Selected from 275+ continuous learning certifications (2020–2025). I like to figure out systems and learn new things.</em></p>
+            <div class="cert-category">AI Agents & Machine Learning</div>
+            <ul class="cert-list">
+                <li>AI Automation & Agents with Model Context Protocol (MCP) | Udemy (2025)</li>
+                <li>Programming Generative AI: PyTorch, Hugging Face & Stable Diffusion | LinkedIn (2025)</li>
+                <li>AWS Certified Machine Learning Engineer Associate (MLA-C01) Cert Prep | LinkedIn (2025)</li>
+                <li>Complete Guide to Evaluating Large Language Models (LLMs) | LinkedIn (2025)</li>
+            </ul>
+            <div class="cert-category">Cloud Architecture & DevOps</div>
+            <ul class="cert-list">
+                <li>Kubernetes: Provisioning for Infrastructure as Code | LinkedIn (2025)</li>
+                <li>AWS Certified Solutions Architect – Associate (SAA-C03) Cert Prep | LinkedIn (2025)</li>
+                <li>Docker Foundations Professional Certificate | Docker (2025)</li>
+            </ul>
+            <div class="cert-category">Data Engineering & Product Leadership</div>
+            <ul class="cert-list">
+                <li>Complete Guide to SQL for Data Engineering | LinkedIn (2025)</li>
+                <li>Product Management: Building a Product Strategy & Roadmap | PMI (2025)</li>
+                <li>Aha! Product Management Professional Certificate | Aha! (2025)</li>
             </ul>
         </div>
 
-        <!-- Core Competencies -->
-        <div class="resume-section">
-            <h2 class="section-title">Core Competencies</h2>
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h6>AI/ML Engineering</h6>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge bg-primary">Generative AI</span>
-                        <span class="badge bg-primary">Large Language Models</span>
-                        <span class="badge bg-primary">RAG</span>
-                        <span class="badge bg-primary">Multi-Agent Orchestration</span>
-                        <span class="badge bg-primary">LangChain</span>
-                        <span class="badge bg-primary">Vector Embeddings</span>
-                        <span class="badge bg-primary">Machine Learning</span>
-                        <span class="badge bg-primary">Deep Learning</span>
-                        <span class="badge bg-primary">Stable Diffusion</span>
-                        <span class="badge bg-primary">Hugging Face</span>
-                        <span class="badge bg-primary">PyTorch</span>
-                        <span class="badge bg-primary">TensorFlow</span>
-                    </div>
+                    <h6>Development</h6>
+                    <p>Collaborated with mobile developers to create and build mobile-responsive websites. 2nd Nature Interactive Syracuse, NY, USA Application Engineer & Development Lead April 2007 - December 2009 •</p>
                 </div>
                 <div class="skill-category">
-                    <h6>Programming & Frameworks</h6>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Python</span>
-                        <span class="badge border border-light text-light">JavaScript/TypeScript</span>
-                        <span class="badge border border-light text-light">Node.js</span>
-                        <span class="badge border border-light text-light">FastAPI</span>
-                        <span class="badge border border-light text-light">Django</span>
-                        <span class="badge border border-light text-light">Flask</span>
-                        <span class="badge border border-light text-light">Express.js</span>
-                        <span class="badge border border-light text-light">React</span>
-                        <span class="badge border border-light text-light">GraphQL</span>
-                        <span class="badge border border-light text-light">REST APIs</span>
-                        <span class="badge border border-light text-light">Microservices</span>
-                    </div>
+                    <h6>Leadership</h6>
+                    <p>Supervised the development of new engineering software and managed productivity of the technical team. •</p>
                 </div>
                 <div class="skill-category">
-                    <h6>Cloud & DevOps</h6>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">AWS</span>
-                        <span class="badge border border-light text-light">Google Cloud Platform</span>
-                        <span class="badge border border-light text-light">Docker</span>
-                        <span class="badge border border-light text-light">Kubernetes</span>
-                        <span class="badge border border-light text-light">CI/CD Pipelines</span>
-                        <span class="badge border border-light text-light">Infrastructure as Code</span>
-                        <span class="badge border border-light text-light">GitOps</span>
-                        <span class="badge border border-light text-light">Cloud-Native AI</span>
-                    </div>
+                    <h6>Administration</h6>
+                    <p>Meticulously performed all database changes and administration tasks on web portal SQL servers. •</p>
                 </div>
                 <div class="skill-category">
-                    <h6>Data Engineering</h6>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">SQL</span>
-                        <span class="badge border border-light text-light">PostgreSQL</span>
-                        <span class="badge border border-light text-light">MongoDB</span>
-                        <span class="badge border border-light text-light">Vector Databases</span>
-                        <span class="badge border border-light text-light">Data Analysis</span>
-                        <span class="badge border border-light text-light">ETL/ELT Pipelines</span>
-                        <span class="badge border border-light text-light">Real-time Processing</span>
-                    </div>
+                    <h6>Solving</h6>
+                    <p>Spearheaded projects by creating and running SQL queries for multiple tasks across all environments. Certifications Selected from 275+ continuous learning certifications (2020–2025). I like to figure out systems and learn new things. AI Agents & Machine Learning • AI Automation & Agents with Model Context Protocol (MCP) | Udemy (2025) •</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Work Experience -->
-        <div class="resume-section">
-            <h2 class="section-title">Work Experience</h2>
-            
-            <ul class="list-group mb-4">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Independent Projects, Contracts (Dev, Design, PM)</span>
-                            <span class="ms-3 small fw-light date-range">01/1998 – present</span>
-                        </div>
-                        <div class="company-name">Freelance</div>
-                        <div class="location">Remote</div>
-                        <p class="mt-2">Design and develop custom AI-powered applications, automation systems, and full-stack solutions for diverse clients. Recent focus on generative AI, LLM orchestration, and intelligent agent systems.</p>
-                        <div class="mt-2">
-                            <strong>Recent AI Projects:</strong>
-                            <ul class="mt-1">
-                                <li>Built multi-agent orchestration systems using LangChain and RAG architectures</li>
-                                <li>Developed custom GPT applications and prompt engineering solutions</li>
-                                <li>Implemented vector embeddings and semantic search capabilities</li>
-                                <li>Created ML pipelines with PyTorch and Hugging Face transformers</li>
-                            </ul>
-                            <strong>Enterprise Solutions Delivered:</strong>
-                            <ul class="mt-1">
-                                <li>E-commerce platforms, CRM systems, learning management systems</li>
-                                <li>Workflow automation, project management tools, payment processing</li>
-                                <li>Real estate listing systems, POS systems, home automation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge bg-primary">AI/ML</span>
-                        <span class="badge bg-primary">Full-Stack Development</span>
-                        <span class="badge bg-primary">LangChain</span>
-                        <span class="badge bg-primary">RAG</span>
-                    </div>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Senior Software Engineer</span>
-                            <span class="ms-3 small fw-light date-range">10/2021 – 08/2022</span>
-                        </div>
-                        <div class="company-name">Bendyworks</div>
-                        <div class="location">Madison, United States</div>
-                        <p class="mt-2">Full-stack engineer at an agile consulting firm delivering enterprise web and mobile applications using Ruby on Rails, Elixir/Phoenix, Node.js, Python, and modern front-end frameworks.</p>
-                        <div class="mt-2">
-                            <strong>Key Accomplishments:</strong>
-                            <ul class="mt-1">
-                                <li>Architected 3+ full-stack applications using Rails and React, reducing client operational costs by 30% through automation</li>
-                                <li>Implemented real-time features with Phoenix Channels/LiveView, improving user engagement by 40%</li>
-                                <li>Developed RESTful and GraphQL APIs serving 10,000+ daily requests with 99.9% uptime</li>
-                                <li>Refactored legacy Rails codebases, increasing test coverage from 45% to 85%</li>
-                                <li>Optimized database queries and caching strategies, improving response times from 800ms to 200ms</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Ruby on Rails</span>
-                        <span class="badge border border-light text-light">Elixir/Phoenix</span>
-                        <span class="badge border border-light text-light">React</span>
-                        <span class="badge border border-light text-light">GraphQL</span>
-                        <span class="badge border border-light text-light">TDD/BDD</span>
-                    </div>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Executive Director</span>
-                            <span class="ms-3 small fw-light date-range">06/2016 – 12/2021</span>
-                        </div>
-                        <div class="company-name">Downs2Earth</div>
-                        <div class="location">Green Bay, United States</div>
-                        <p class="mt-2">Built and led a mission-driven organization at the intersection of environmental advocacy and disability inclusion. Established and managed a team of 25 members across seven countries and multiple time zones, developing remote management systems and cross-cultural communication strategies that enabled global collaboration and community impact.</p>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Leadership</span>
-                        <span class="badge border border-light text-light">Remote Management</span>
-                        <span class="badge border border-light text-light">Global Teams</span>
-                    </div>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Lead Developer</span>
-                            <span class="ms-3 small fw-light date-range">01/2013 – 06/2021</span>
-                        </div>
-                        <div class="company-name">The Murray Group</div>
-                        <div class="location">New York City, United States</div>
-                        <p class="mt-2">Led full-stack development and DevOps for enterprise applications serving multiple business units. Architected and delivered scalable solutions across e-commerce, CRM, learning management, and workflow automation systems.</p>
-                        <div class="mt-2">
-                            <strong>Key Responsibilities:</strong>
-                            <ul class="mt-1">
-                                <li>Managed end-to-end development lifecycle from requirements gathering through deployment and maintenance</li>
-                                <li>Implemented CI/CD pipelines and cloud infrastructure on AWS (EC2, S3, Beanstalk)</li>
-                                <li>Designed and built microservices architecture with Docker containerization</li>
-                                <li>Led team training initiatives and established development best practices</li>
-                                <li>Created data models, APIs, and integrations for complex business workflows</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">React</span>
-                        <span class="badge border border-light text-light">Redux</span>
-                        <span class="badge border border-light text-light">Node.js</span>
-                        <span class="badge border border-light text-light">Docker</span>
-                        <span class="badge border border-light text-light">AWS</span>
-                        <span class="badge border border-light text-light">PostgreSQL</span>
-                    </div>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Senior Web Application Developer</span>
-                            <span class="ms-3 small fw-light date-range">01/2010 – 01/2012</span>
-                        </div>
-                        <div class="company-name">Casebook PBC</div>
-                        <div class="location">New York City, United States</div>
-                        <p class="mt-2">Developed and maintained Ruby on Rails applications with focus on scalable architecture and test-driven development. Built progressive web applications with modern JavaScript frameworks.</p>
-                        <div class="mt-2">
-                            <strong>Key Accomplishments:</strong>
-                            <ul class="mt-1">
-                                <li>Implemented comprehensive test suites using RSpec, Cucumber, and TDD practices</li>
-                                <li>Optimized database performance with MongoDB sharding and partitioning strategies</li>
-                                <li>Established CI/CD workflows and automated deployment processes with Heroku</li>
-                                <li>Contributed to technical architecture decisions and code quality standards</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Ruby on Rails</span>
-                        <span class="badge border border-light text-light">JavaScript</span>
-                        <span class="badge border border-light text-light">MongoDB</span>
-                        <span class="badge border border-light text-light">RSpec</span>
-                        <span class="badge border border-light text-light">Heroku</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Education -->
-        <div class="resume-section">
-            <h2 class="section-title">Education</h2>
-            
-            <ul class="list-group mb-4">
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Bachelor of Science - Management Information Systems</span>
-                            <span class="ms-3 small fw-light date-range">01/2005 – 01/2007</span>
-                        </div>
-                        <div class="company-name">SUNY Empire State College</div>
-                        <div class="location">Rochester, United States</div>
-                        <div class="mt-1"><strong>GPA:</strong> 3.8</div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Information Systems</span>
-                    </div>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold">
-                            <span class="job-title">Associates Degree - Management Information Systems</span>
-                            <span class="ms-3 small fw-light date-range">01/2003 – 01/2005</span>
-                        </div>
-                        <div class="company-name">SUNY Brockport</div>
-                        <div class="location">Brockport, United States</div>
-                    </div>
-                    <div class="d-flex flex-wrap gap-1">
-                        <span class="badge border border-light text-light">Information Systems</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Certificates & Training -->
-        <div class="resume-section">
-            <h2 class="section-title">Certificates & Training</h2>
-            
-            <div class="row">
-                <div class="col-12">
-                    <a href="certs.html" target="_blank" class="text-decoration-none">
-                        <div class="portfolio-card" style="background: rgba(13, 110, 253, 0.05); border: 2px solid rgba(13, 110, 253, 0.3); padding: 2.5rem;">
-                            <div class="row align-items-center">
-                                <div class="col-md-2 text-center mb-3 mb-md-0">
-                                    <i class="bi bi-award" style="font-size: 4rem; color: #0d6efd;"></i>
-                                </div>
-                                <div class="col-md-10">
-                                    <h3 style="color: #0d6efd; font-size: 1.75rem; margin-bottom: 1rem;">Professional Certifications Portfolio</h3>
-                                    <p style="font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.6;">Comprehensive collection of <strong>120 professional certifications</strong> totaling <strong>780+ hours</strong> of advanced training in AI/ML, cloud platforms, and full-stack development.</p>
-                                    
-                                    <div class="row mt-3">
-                                        <div class="col-md-3 mb-2">
-                                            <div style="background: rgba(13, 110, 253, 0.1); padding: 10px; border-radius: 5px; text-align: center;">
-                                                <strong style="font-size: 1.5rem; color: #0d6efd;">120</strong><br>
-                                                <small style="color: #6c757d;">Certificates</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 mb-2">
-                                            <div style="background: rgba(13, 110, 253, 0.1); padding: 10px; border-radius: 5px; text-align: center;">
-                                                <strong style="font-size: 1.5rem; color: #0d6efd;">780+</strong><br>
-                                                <small style="color: #6c757d;">Total Hours</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 mb-2">
-                                            <div style="background: rgba(13, 110, 253, 0.1); padding: 10px; border-radius: 5px; text-align: center;">
-                                                <strong style="font-size: 1.5rem; color: #0d6efd;">6.5h</strong><br>
-                                                <small style="color: #6c757d;">Avg Duration</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 mb-2">
-                                            <div style="background: rgba(13, 110, 253, 0.1); padding: 10px; border-radius: 5px; text-align: center;">
-                                                <strong style="font-size: 1.5rem; color: #0d6efd;">12</strong><br>
-                                                <small style="color: #6c757d;">Exams Passed</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-3">
-                                        <p style="margin-bottom: 0.5rem;"><strong>Top Focus Areas:</strong></p>
-                                        <span class="badge bg-primary me-1 mb-1">React (111h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">JavaScript/TypeScript (170h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">Python (76h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">Node.js (69h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">SQL (69h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">AWS (48h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">Kubernetes (41h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">Data Analysis (33h+)</span>
-                                        <span class="badge bg-primary me-1 mb-1">Docker (29h+)</span>
-                                    </div>
-
-                                    <div class="mt-3 text-end">
-                                        <span style="color: #0d6efd; font-weight: 600;">View Complete Portfolio <i class="bi bi-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div class="skill-category">
+                    <h6>AI</h6>
+                    <p>Generative AI, Machine Learning (ML), Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Neural Networks, Deep Learning, Model Context Protocol (MCP), Computer Vision, LangChain, PyTorch, Tensorflow, Hugging Face, Stable Diffusion, NumPy, Pandas, OpenAI (ChatGPT API), ClaudeCode, Cursor, Midjourney, DALL-E, Flowise, n8n, Otter.ai, RunwayML, Multi-Agent Orchestration, Vector Embeddings, Prompt Engineering, Fine-Tuning, Human-in-the-</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Kubernetes</h6>
+                    <p>Provisioning for Infrastructure as Code | LinkedIn (2025) • AWS Certified Solutions Architect – Associate (SAA-C03) Cert Prep | LinkedIn (2025) • Docker Foundations Professional Certificate | Docker (2025) Data Engineering & Product Leadership • Complete Guide to SQL for Data Engineering | LinkedIn (2025) •</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Management</h6>
+                    <p>Building a Product Strategy & Roadmap | PMI (2025) • Aha! Product Management Professional Certificate | Aha! (2025)</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Languages</h6>
+                    <p>Python, JavaScript, TypeScript, Ruby on Rails, Elixir/Phoenix, PHP, Go (Golang), Java, C/C++, Rust, Swift, Objective-C, Bash/Shell Scripting, ActionScript, CoffeeScript, AppleScript, Perl, Clojure Cloud Infrastructure, DevOps & CI/</p>
+                </div>
+                <div class="skill-category">
+                    <h6>CD</h6>
+                    <p>AWS (EC2, S3, Beanstalk, Lightsail, IAM), Google Cloud Platform (GCP), Azure, Heroku, DigitalOcean, Rackspace, Hostinger, GoDaddy, Docker, Kubernetes, Docker Compose, Helm, Terraform, Ansible, CloudFormation, Chef, Puppet, CI/CD Pipelines, Github Actions, Git, GitHub, GitFlow, Bitbucket, Apache Subversion (SVN), Linux (Ubuntu/Debian/RedHat), Nginx, Apache, SSH, VirtualBox, Vagrant, Raspberry Pi/</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Architecture</h6>
+                    <p>FastAPI, Django, Flask, Node.js, Express.js, Next.js, Ruby on Rails (RoR), Elixir/Phoenix, Sinatra, Microservices Architecture, REST APIs, GraphQL (Apollo), Serverless, Event-Driven Architecture, Distributed Systems, OAuth, JWT, OWASP, Role-based Access Control Frontend Development & UI/</p>
+                </div>
+                <div class="skill-category">
+                    <h6>UX</h6>
+                    <p>React.js, Redux, Angular (AngularJS/Angular 2+), Vue.js, Gatsby, Tailwind CSS, Bootstrap, Material-UI, SCSS/SASS, CSS3, HTML5, Styled Components, Adobe Creative Suite, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Figma, Balsamiq, SketchUp, CAD, Visio, Responsive Design, Human-</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Engineering</h6>
+                    <p>PostgreSQL, MySQL, Microsoft SQL Server, SQLite, Oracle, MongoDB, Redis, Cassandra, Dynamodb, Vector Databases (Pinecone, Weaviate, Milvus), Embeddings, ETL/ELT Pipelines, Data Analysis, Real-time Data Processing, Apache Spark, Airflow, Databricks, Apache Kafka, 3</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Quality</h6>
+                    <p>Test-Driven Development (TDD), Behavior-Driven Development (BDD), Unit Testing, Integration Testing, End-to-End (E2E) Testing, Jest, RSpec, Cucumber, Cypress, Selenium, PyTest, Mocha/</p>
+                </div>
+                <div class="skill-category">
+                    <h6>Skills</h6>
+                    <p>Technical Leadership, Agile/Scrum, Kanban, Project Management, Roadmap Definition, Strategic Planning, Mentorship, Cross-Functional Collaboration, Problem Solving, Stakeholder Management, Interpersonal Communication, Remote Team Management, Conflict Resolution</p>
                 </div>
             </div>
         </div>
