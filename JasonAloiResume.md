@@ -25,7 +25,7 @@ May 2007 | GPA: 3.8
 - Provides technical leadership in roadmap definition and establishing engineering best practices for over 100+ individuals, organizations, and small businesses, with many repeated hires.
 - Participates in product strategy and roadmapping, exercising cross-functional collaboration across departments to define requirements and deliver scalable solutions.
 
-### Bendyworks — Madison, United States
+### Bendyworks — Remote
 **Senior Software Engineer** | October 2021 - August 2022
 - Full-Stack Development: Delivered enterprise web and mobile applications in an Agile consulting environment using Ruby on Rails, Elixir/Phoenix, Node.js, Python, and React.
 - Architecture & Scale: Architected 3+ full-stack applications, reducing client operational costs by 30% through automation and workflow improvements.

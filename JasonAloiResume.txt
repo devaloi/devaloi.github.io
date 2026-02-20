@@ -28,7 +28,7 @@ Senior AI Engineer & Full-Stack Developer                                       
   • Participates in product strategy and roadmapping, exercising cross-functional collaboration across departments to define
     requirements and deliver scalable solutions.
 
-Bendyworks                                                                                                   Madison, United States
+Bendyworks                                                                                                                  Remote
 Senior Software Engineer                                                                                 October 2021 - August 2022
   • Full-Stack Development: Delivered enterprise web and mobile applications in an Agile consulting environment using Ruby on
     Rails, Elixir/Phoenix, Node.js, Python, and React.
